@@ -51,7 +51,7 @@ Board::~Board() {
 
 bool Board::checkInputWord(std::string input) {
 	if (input.size() != (unsigned long)_lenght) {
-		std::cout << RED << "The lenght of the input is not " << _lenght << RESET << std::endl;
+		std::cout << RED << "The lenght of the input is not " << _lenght << RESET << std::endl << std::endl;
 		return false;
 	}
 	if (!checkExistWord(input))

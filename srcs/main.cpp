@@ -33,16 +33,18 @@ int	main(int ac, char*av[]) {
 		}
 		if (!board.checkInputWord(input))
 			i--;
-		else
+		else {
 			board.insertWord(i, input);
+			keyboard.updateMap(input, board);
+		}
 		board.printBoard();
+		keyboard.printKeybaord();
 		if (input == board.getWord()) {
 			std::cout << CYAN << "   You guess the word in " << i + 1 << " attempt!" << RESET << std::endl << std::endl;
 			return 0;
 		}
-		keyboard.updateMap(input, board);
 		std::cout << std::endl;
 	}
-	std::cout << "The word is: " << RED << board.getWord() << RESET << std::endl;
+	std::cout << "The secret word was: " << RED << board.getWord() << RESET << std::endl;
 	return 0;
 }

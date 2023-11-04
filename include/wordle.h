@@ -4,7 +4,7 @@
 // ANSI Colors
 # define RED "\e[0;31m"
 # define GREEN "\e[0;32m"
-# define YELLOW "\e[93;5;226m"
+# define YELLOW "\e[0;33m"
 # define BLUE "\e[0;34m"
 # define GREY "\x1B[90m"
 # define MAGENTA "\e[0;35m"

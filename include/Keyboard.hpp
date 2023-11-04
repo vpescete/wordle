@@ -17,6 +17,7 @@ class Keyboard {
 		~Keyboard() {};
 
 		void	updateMap(std::string input, Board & board);
+		void	printKeybaord();
 };
 
 #endif
