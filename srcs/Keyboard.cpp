@@ -57,6 +57,7 @@ void Keyboard::updateMap(std::string input, Board & board) {
 void Keyboard::printKeybaord() {
 	std::vector<std::unordered_map<char, int> >::iterator it = _keyboard.begin();
 	for (int i = 0; it != _keyboard.end() && i < 3; it++, i++) {
+		std::cout << "   ";
 		if (i == 1)
 			std::cout << " ";
 		else if (i == 2)

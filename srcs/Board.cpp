@@ -69,7 +69,7 @@ bool Board::checkExistWord(std::string input) {
 		if (input == (*it))
 			return true;
 	}
-	std::cout << RED << input << " dosen't exist" << RESET << std::endl;
+	std::cout << RED << input << " dosen't exist" << RESET << std::endl << std::endl;
 	return false;
 }
 
