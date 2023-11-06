@@ -29,5 +29,6 @@
 
 # include "Board.hpp"
 # include "Keyboard.hpp"
+# include "Conf.hpp"
 
 #endif

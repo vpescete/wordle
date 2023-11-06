@@ -7,7 +7,7 @@ void Board::_initBoard() {
 		str = "_____";
 	else
 		str = "____";
-	for (int i = 0; i < 6; i++) {
+	for (int i = 0; i < _maxGuess; i++) {
 		_board.push_back(str);
 	}
 }
@@ -39,8 +39,8 @@ void Board::_setWord() {
 
 	_word = _words[random_index];
 }
-Board::Board(int lenght) : _lenght(lenght)
-{
+
+Board::Board(int lenght, int maxGuess) : _lenght(lenght), _maxGuess(maxGuess) {
 	_initBoard();
 	_setWord();
 	_setMap();
@@ -142,4 +142,12 @@ int Board::getLenght() {
 
 std::string Board::getWord() {
 	return _word;
+}
+
+std::vector<std::string> Board::getBoard() {
+	return _board;
+}
+
+void Board::setMaxGuess(int n) {
+	_maxGuess = n;
 }

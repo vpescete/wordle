@@ -1,6 +1,6 @@
 NAME	= wordle
 
-SRC		= srcs/main.cpp srcs/Board.cpp srcs/Keyboard.cpp
+SRC		= srcs/main.cpp srcs/Board.cpp srcs/Keyboard.cpp srcs/Conf.cpp
 
 OBJ		= $(SRC:.cpp=.o)
 

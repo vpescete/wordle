@@ -6,6 +6,7 @@
 class Board {
 	private:
 		int	_lenght;
+		int	_maxGuess;
 		std::string	_word;
 
 		std::vector<std::string> _board;
@@ -18,7 +19,7 @@ class Board {
 		void	_setMap();
 		std::map<char, int>	_letterCounter;
 	public:
-		Board(int lenght);
+		Board(int lenght, int maxGuess);
 		~Board();
 
 		bool	checkInputWord(std::string input);
@@ -27,6 +28,8 @@ class Board {
 		void	insertWord(int i, std::string input);
 		int		getLenght();
 		std::string	getWord();
+		std::vector<std::string> getBoard();
+		void	setMaxGuess(int n);
 };
 
 # endif
