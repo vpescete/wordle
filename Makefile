@@ -6,7 +6,7 @@ OBJ		= $(SRC:.cpp=.o)
 
 I		= include/
 CC		= c++
-FLAGS	= -Wall -Wextra -Werror -I$I
+FLAGS	= -I$I #-Wall -Wextra -Werror 
 RM		= rm -rf
 
 # Colors

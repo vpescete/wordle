@@ -28,6 +28,9 @@ class Conf {
 
 		std::vector<std::shared_ptr<Board> >	getTables();
 		void		printTables();
+		int			getMode() {
+			return _mode;
+		};
 		int			getMaxGuess() {
 			return _maxGuess;
 		};

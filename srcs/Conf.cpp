@@ -7,13 +7,13 @@ void Conf::_setTables() {
     }
 }
 
-std::vector<std::shared_ptr<Board>> Conf::getTables() {
+std::vector<std::shared_ptr<Board> > Conf::getTables() {
 	return this->_tables;
 }
 
 void Conf::printTables() {
 	for (int i = 0; i < _maxGuess; i++) {
-		std::vector<std::shared_ptr<Board>>::iterator it = _tables.begin();
+		std::vector<std::shared_ptr<Board> >::iterator it = _tables.begin();
 		for (; it != _tables.end(); it++) {
 			std::cout << "\t" << (*it)->getBoard()[i];
 		}

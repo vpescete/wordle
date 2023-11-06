@@ -40,7 +40,7 @@ void Board::_setWord() {
 	_word = _words[random_index];
 }
 
-Board::Board(int lenght, int maxGuess) : _lenght(lenght), _maxGuess(maxGuess) {
+Board::Board(int lenght, int maxGuess) : _lenght(lenght), _maxGuess(maxGuess), _isGuessed(false) {
 	_initBoard();
 	_setWord();
 	_setMap();
@@ -116,16 +116,13 @@ void Board::_setMap() {
 }
 
 void Board::insertWord(int i, std::string input) {
-	for (int i = 0; i < _lenght; i++) {
-		if (input[i] >= 'a' && input[i] <= 'z')
-			input[i] -=32;
-	}
-	_board[i] = input;
+	if (!getIsGuessed())
+		_board[i] = input;
 }
 
 void Board::printBoard()
 {
-	for (int i = 0; i < 6; i++) {
+	for (int i = 0; i < _maxGuess; i++) {
 		std::cout << "\t";
 		for (int j = 0; j < _lenght; j++) {
 			printColor(_board[i][j], i, j);
@@ -150,4 +147,12 @@ std::vector<std::string> Board::getBoard() {
 
 void Board::setMaxGuess(int n) {
 	_maxGuess = n;
+}
+
+bool Board::getIsGuessed() {
+	return _isGuessed;
+}
+
+void Board::setIsGuessed(bool value) {
+	_isGuessed = value;
 }

@@ -5,8 +5,9 @@
 
 class Board {
 	private:
-		int	_lenght;
-		int	_maxGuess;
+		int		_lenght;
+		bool	_isGuessed;
+		int		_maxGuess;
 		std::string	_word;
 
 		std::vector<std::string> _board;
@@ -30,6 +31,8 @@ class Board {
 		std::string	getWord();
 		std::vector<std::string> getBoard();
 		void	setMaxGuess(int n);
+		bool	getIsGuessed();
+		void	setIsGuessed(bool value);
 };
 
 # endif
