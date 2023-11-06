@@ -40,7 +40,7 @@ int	main(int ac, char*av[]) {
 		board.printBoard();
 		keyboard.printKeybaord();
 		if (input == board.getWord()) {
-			std::cout << CYAN << "   You guess the word in " << i + 1 << " attempt!" << RESET << std::endl << std::endl;
+			std::cout << std::endl << CYAN << " You guess the word in " << i + 1 << " attempt!" << RESET << std::endl << std::endl;
 			return 0;
 		}
 		std::cout << std::endl;
