@@ -7,6 +7,7 @@ class Board {
 	private:
 		int	_lenght;
 		std::string	_word;
+		int	_maxGuess = 6;
 
 		std::vector<std::string> _board;
 		std::vector<std::string> _words;
@@ -27,6 +28,7 @@ class Board {
 		void	insertWord(int i, std::string input);
 		int		getLenght();
 		std::string	getWord();
+		int		getMaxGuess();
 };
 
 # endif

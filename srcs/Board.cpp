@@ -143,3 +143,7 @@ int Board::getLenght() {
 std::string Board::getWord() {
 	return _word;
 }
+
+int Board::getMaxGuess() {
+	return _maxGuess;
+}

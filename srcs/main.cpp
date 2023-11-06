@@ -1,7 +1,7 @@
 #include "../include/wordle.h"
 
 int	getWordLenght(char *str) {
-	if ((str[0] != '4' || str[0] != '5') && std::strlen(str) != 1) {
+	if ((str[0] != '4' || str[0] != '5') && strlen(str) != 1) {
 		std::cout << RED << "Bad Arguments. You can choose only 4 or 5" << std::endl;
 		exit(1);
 	}
@@ -23,13 +23,13 @@ int	main(int ac, char*av[]) {
 	Keyboard keyboard;
 
 	std::string input;
-	for (int i = 0; i <= board.getLenght(); i++) {
+	for (int i = 0; i < board.getMaxGuess(); i++) {
 		std::cout << "Input: ";
 		std::getline(std::cin, input);
 		std::cout << std::endl;
-		for (int i = 0; i < board.getLenght(); i++) {
-			if (input[i] >= 'a' && input[i] <= 'z')
-				input[i] -=32;
+		for (int j = 0; j < board.getLenght(); j++) {
+			if (input[j] >= 'a' && input[j] <= 'z')
+				input[j] -=32;
 		}
 		if (!board.checkInputWord(input))
 			i--;
