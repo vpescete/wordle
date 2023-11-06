@@ -69,6 +69,7 @@ int	main(int ac, char*av[]) {
 	int	guessed = 0;
 	Conf	confGame(mod, len);
 	std::vector<std::shared_ptr<Board> > vector = confGame.getTables();
+	int check = 0;
 	for (int i = 0; i < confGame.getMaxGuess(); i++) {
 		std::string input;
 		std::cout << GREEN << "Input: "; 
@@ -76,7 +77,6 @@ int	main(int ac, char*av[]) {
 		std::cout << RESET << std::endl;
 		setCapInput(&input);
 		std::vector<std::shared_ptr<Board> >::iterator it = vector.begin();
-		int check = 0;
 		for (int max = 0; it != vector.end() && max < confGame.getMode(); it++, max++) {
 			if (!(**it).checkInputWord(input)) {
 				i--;
