@@ -68,7 +68,8 @@ int	main(int ac, char*av[]) {
 	}
 	int	guessed = 0;
 	Conf	confGame(mod, len);
-	std::vector<std::shared_ptr<Board> > vector = confGame.getTables();
+	std::vector<std::shared_ptr<Board> > vectorTab = confGame.getTables();
+	std::vector<std::shared_ptr<Keyboard> > vectorKeyboard = confGame.getKeyboards();
 	int check = 0;
 	for (int i = 0; i < confGame.getMaxGuess(); i++) {
 		std::string input;
@@ -76,16 +77,20 @@ int	main(int ac, char*av[]) {
 		std::getline(std::cin, input);
 		std::cout << RESET << std::endl;
 		setCapInput(&input);
-		std::vector<std::shared_ptr<Board> >::iterator it = vector.begin();
-		for (int max = 0; it != vector.end() && max < confGame.getMode(); it++, max++) {
+		std::vector<std::shared_ptr<Board> >::iterator it = vectorTab.begin();
+		std::vector<std::shared_ptr<Keyboard> >::iterator ite = vectorKeyboard.begin();
+		for (int max = 0; it != vectorTab.end() && max < confGame.getMode(); it++, max++, ite++) {
 			if (!(**it).checkInputWord(input)) {
 				i--;
 				break ;
 			}
 			else {
+				std::cout << RED << "[TABLE " << max + 1 << "]" << RESET << std::endl;
 				(**it).insertWord(i, input);
+				(**ite).updateMap(input, (**it));
 			}
 			(**it).printBoard();
+			(**ite).printKeybaord();
 			if (input == (**it).getWord()) {
 				(**it).setIsGuessed(true);
 				std::cout << CYAN << "   You guess the word in " << i + 1 << " attempt!" << RESET << std::endl << std::endl;
@@ -99,8 +104,8 @@ int	main(int ac, char*av[]) {
 		}
 	}
 	std::cout << std::endl << RED <<"The secret words were: " << std::endl;
-	std::vector<std::shared_ptr<Board> >::iterator it = vector.begin();
-	for (int max = 0; it != vector.end() && max < confGame.getMode(); it++, max++) {
+	std::vector<std::shared_ptr<Board> >::iterator it = vectorTab.begin();
+	for (int max = 0; it != vectorTab.end() && max < confGame.getMode(); it++, max++) {
 		std::cout << RED << "\t- " << (**it).getWord() << std::endl;
 	}
 	return 0;
