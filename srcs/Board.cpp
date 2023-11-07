@@ -39,8 +39,7 @@ void Board::_setWord() {
 
 	_word = _words[random_index];
 }
-Board::Board(int lenght) : _lenght(lenght)
-{
+Board::Board(int lenght) : _lenght(lenght), _maxGuess(6) {
 	_initBoard();
 	_setWord();
 	_setMap();

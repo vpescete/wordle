@@ -7,7 +7,7 @@ class Board {
 	private:
 		int	_lenght;
 		std::string	_word;
-		int	_maxGuess = 6;
+		int	_maxGuess;
 
 		std::vector<std::string> _board;
 		std::vector<std::string> _words;
