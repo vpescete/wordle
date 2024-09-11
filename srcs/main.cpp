@@ -44,6 +44,8 @@ int	main(int ac, char*av[]) {
 			return 0;
 		}
 		std::cout << std::endl;
+		std::cout << std::endl;
+
 	}
 	std::cout << std::endl <<"The secret word was: " << RED << board.getWord() << RESET << std::endl;
 	return 0;
